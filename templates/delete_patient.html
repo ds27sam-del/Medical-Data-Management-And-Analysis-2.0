@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Delete Patient{% endblock %}
+{% block content %}
+<h2>Delete Patient</h2>
+<form method="post">
+    <label>Patient:</label>
+    <select name="patient_id">
+        {% for patient in patients %}
+        <option value="{{ patient.patient_id }}">{{ patient.name }} (ID: {{ patient.patient_id }})</option>
+        {% endfor %}
+    </select><br>
+    <button type="submit">Delete</button>
+</form>
+{% endblock %}

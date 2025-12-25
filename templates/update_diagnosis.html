@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Update Diagnosis{% endblock %}
+{% block content %}
+<h2>Update Diagnosis</h2>
+<form method="post">
+    <label>Patient:</label>
+    <select name="patient_id">
+        {% for patient in patients %}
+        <option value="{{ patient.patient_id }}">{{ patient.name }} (ID: {{ patient.patient_id }})</option>
+        {% endfor %}
+    </select><br>
+    <label>New Diagnosis:</label>
+    <input type="text" name="new_diagnosis" required><br>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

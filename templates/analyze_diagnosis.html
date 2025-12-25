@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Analyze Diagnosis{% endblock %}
+{% block content %}
+<h2>Diagnosis Count</h2>
+<table border="1">
+    <tr><th>Diagnosis</th><th>Count</th></tr>
+    {% for diagnosis, count in results %}
+    <tr>
+        <td>{{ diagnosis }}</td>
+        <td>{{ count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
