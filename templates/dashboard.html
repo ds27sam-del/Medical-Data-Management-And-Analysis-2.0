@@ -3,7 +3,7 @@
 {% block title %}Dashboard{% endblock %}
 {% block content %}
 <h2>Welcome, {{ session['user'] }}</h2>
-<ul>
+<ul class="dashboard-links">
     <li><a href="{{ url_for('add_patient') }}">Add New Patient</a></li>
     <li><a href="{{ url_for('show_patients') }}">Show All Patients</a></li>
     <li><a href="{{ url_for('update_diagnosis') }}">Update Diagnosis</a></li>

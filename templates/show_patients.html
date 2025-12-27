@@ -2,7 +2,8 @@
 {% block title %}All Patients{% endblock %}
 {% block content %}
 <h2>All Patients</h2>
-<table border="1">
+<div class="table-wrapper card">
+<table>
     <tr>
         <th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Diagnosis</th><th>Treatment</th><th>Admission Date</th>
     </tr>
@@ -18,4 +19,5 @@
     </tr>
     {% endfor %}
 </table>
+</div>
 {% endblock %}

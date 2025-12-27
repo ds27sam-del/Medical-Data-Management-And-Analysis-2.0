@@ -7,22 +7,34 @@
 </head>
 <body>
     <header>
-        <h1>Medical Data Management System</h1>
-        {% if session.get('user') %}
-            <a href="{{ url_for('logout') }}">Logout</a>
-        {% endif %}
+        <div class="header-inner">
+            <h1>Medical Data Management System</h1>
+            <nav>
+                {% if session.get('user') %}
+                    <a class="nav-btn" href="{{ url_for('dashboard') }}">Dashboard</a>
+                    <a class="nav-btn" href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a class="nav-btn" href="{{ url_for('login') }}">Login</a>
+                    <a class="nav-btn" href="{{ url_for('register') }}">Register</a>
+                {% endif %}
+            </nav>
+        </div>
     </header>
     <main>
         {% with messages = get_flashed_messages() %}
           {% if messages %}
-            <ul>
+            <ul class="flashes">
               {% for message in messages %}
                 <li>{{ message }}</li>
               {% endfor %}
             </ul>
           {% endif %}
         {% endwith %}
+        <div class="container">
+        <div class="card">
         {% block content %}{% endblock %}
+        </div>
+        </div>
     </main>
 </body>
 </html>
